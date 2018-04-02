@@ -2,7 +2,7 @@
 
 ## Steps
 
-**CLone repository**
+**Clone repository**
 
 ```
 git clone https://github.com/jshupptechnologies/react-native-map-marker-demo.git

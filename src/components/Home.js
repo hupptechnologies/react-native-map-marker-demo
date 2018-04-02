@@ -47,9 +47,13 @@ class HomeComponent extends Component {
         this.setState({selectedLocation: e.nativeEvent.coordinate});      
     }
 
-  	render() {    
-	    return (
-	    	<Container theme={theme} style={styles.container}>
+    prevent(e){
+      e.stopPropagation();
+    }
+
+    render() {    
+      return (
+        <Container theme={theme} style={styles.container}>
 
               <MapView
                 style={styles.map}
@@ -66,6 +70,7 @@ class HomeComponent extends Component {
                     coordinate={marker.latlng}
                     title={marker.title}
                     description={marker.description}
+                    onPress={(e) => {this.prevent(e);} }
                   />
                 ))}
               </MapView>
@@ -99,8 +104,8 @@ class HomeComponent extends Component {
                   </View>
               </Modal>
           </Container>
-	    );
-  	}
+      );
+    }
 }
 
 export default HomeComponent;
